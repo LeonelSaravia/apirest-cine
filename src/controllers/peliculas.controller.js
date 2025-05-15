@@ -94,10 +94,13 @@ export const deletePeliculas = async (req, res) => {
     }
   
     //¿Y si borrra correctamente?
-    res.sendStatus(204)
+    res.json({
+      message: 'Eliminado Correctamente',
+      id: req.params.id
+    })
   } catch (error) {
     return res.status(500).json({
-      message: 'No se pudo eliminar la Peliculas'
+      message: 'No se Concreto la eliminación'
     })
   }
 }
